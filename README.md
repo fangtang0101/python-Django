@@ -1,6 +1,9 @@
 # python-Django
 
 This repo is a collection of study demo of Django
+1. cd dj03(or other)/myproject
+2. python manage.py runserver
+3.open http://127.0.01:80000
 
 ## dj01: how to build environment
 
