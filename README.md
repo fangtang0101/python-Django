@@ -4,7 +4,7 @@ This repo is a collection of study demo of Django
 
 ## dj01: how to build environment
 
-## dj01: creat a simple project of Django
+## dj02: creat a simple project of Django
 
 	1. django-admin startproject myproject
 
@@ -30,5 +30,8 @@ This repo is a collection of study demo of Django
 	  *  views.py  此文件是用来处理Web应用程序 request 与 response 周期文件
 	7. settings.py 中添加 boards
 
-
+## dj03: creat a simple view of Hello,World 
+	1. 	add request and response in views.py
+	2.  add url setting in urls.py 
+	
 
