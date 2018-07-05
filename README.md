@@ -28,6 +28,7 @@ This repo is a collection of study demo of Django
 	  *  models.py 此文件用来定义 Web应用程序实例的地方。models会有Django自动转化为数据库表
 	  *  tests.py  此文件用来写当前程序的单元测试
 	  *  views.py  此文件是用来处理Web应用程序 request 与 response 周期文件
+	7. settings.py 中添加 boards
 
 
 
