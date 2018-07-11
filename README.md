@@ -54,8 +54,8 @@ This repo is a collection of study demo of Django
 	9.  创建 board = Board.objects.creat(name='name2',description='des python')
 	10. 查询 Board.ojects.all()       board = Board.objects.get(id=3)
 
-	![创建 model class类](./imgs/img1.png)
-	![增 删 改 查](./imgs/img2.png)
+	![创建 model class类](/imgs/img1.png)
+	![增 删 改 查](/imgs/img2.png)
 
 
 	
