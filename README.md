@@ -3,7 +3,7 @@
 This repo is a collection of study demo of Django
 1. cd dj03(or other)/myproject
 2. python manage.py runserver
-3.open http://127.0.01:80000
+3. open http://127.0.01:80000
 
 ## dj01: how to build environment
 
@@ -56,6 +56,24 @@ This repo is a collection of study demo of Django
 
 	![创建 model class类](/imgs/img1.png)
 	![增 删 改 查](/imgs/img2.png)
+
+## dj06  first view
+	1. 在 views.py 中添加代码
+	```python 
+	from django.shortcuts import render
+	# Create your views here.
+	from django.http import HttpResponse
+	from .models import Board
+
+	def home(request):
+		boards = Board.objects.all()
+		boards_names = list()
+		for board in boards:
+			boards_names.append(board.name)
+
+		response_html = '<br>'.join(boards_names)
+		return HttpResponse(response_html)
+	```
 
 
 	
