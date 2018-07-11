@@ -36,5 +36,27 @@ This repo is a collection of study demo of Django
 ## dj03: creat a simple view of Hello,World 
 	1. 	add request and response in views.py
 	2.  add url setting in urls.py 
+
+## dj05  model created
+	1.  models.py   creat the class of model  在此文件夹创建对应的 model 类
+	2.  激活虚拟环境  并  执行 python manage.py makemigrations  产生 0001_inital.py
+	3.  python manage.py sqlmigrate boards 0001
+	4.  python manage.py migrate  //至此 数据库建设好了
+
+	  python 中的shell 来操作 数据 (增删改查)
+
+	5. python manage.py shell  // 进入shell 模式  换行用 \
+	6. 增加一个数据  from boards,models import Boards   board = Board(name='xxx',description='des') board.save()
+	7. 查询  board.id  board.name 
+	8. 改    board.name='abc' board.save()
+
+		模型管理器(Model Manager) 通过属性objects 属性来 访问管理器，主要用于数据库操作
+	9.  创建 board = Board.objects.creat(name='name2',description='des python')
+	10. 查询 Board.ojects.all()       board = Board.objects.get(id=3)
+
+	![创建 model class类](./imgs/img1.png)
+	![增 删 改 查](./imgs/img2.png)
+
+
 	
 
