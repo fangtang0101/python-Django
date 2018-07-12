@@ -59,7 +59,7 @@ This repo is a collection of study demo of Django
 
 ## dj06  first view
 	1. 在 views.py 中添加代码cls
-	```python 
+```python
 	from django.shortcuts import render
 	# Create your views here.
 	from django.http import HttpResponse
@@ -73,10 +73,10 @@ This repo is a collection of study demo of Django
 
 		response_html = '<br>'.join(boards_names)
 		return HttpResponse(response_html)
-	```
+```
 ## dj07 set template 
 	1. 创建 Templates 文件 xx.html 
-	```html
+```html
 		<!DOCTYPE html>
 	<html>
 
@@ -114,19 +114,19 @@ This repo is a collection of study demo of Django
 	</body>
 	</html>
 
-	```
+```
 	2. 在setting.py 中设置 TEMPLATES 变量
-	```
+```
 	os.path.join(BASE_DIR,'templates')],
-	```
+```
 	3.boards/views.py 中配置
-	```
+```
 	def home(request):
 	boards = Board.objects.all()
 	return render(request,'home.html',{'boards':boards})
-	```
+```
 	4. 效果
-	![效果](imgs/img3.png)
+	![效果](https://github.com/fangtang0101/python-Django/master/imgs/img3.png)
 
 
 
