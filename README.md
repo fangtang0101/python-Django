@@ -126,7 +126,7 @@ This repo is a collection of study demo of Django
 	return render(request,'home.html',{'boards':boards})
 ```
 	4. 效果
-	![效果](https://github.com/fangtang0101/python-Django/master/imgs/img3.png)
+	![效果](https://github.com/fangtang0101/python-Django/blob/master/imgs/img3.png)
 
 
 
