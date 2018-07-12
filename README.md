@@ -46,7 +46,7 @@ This repo is a collection of study demo of Django
 	  python 中的shell 来操作 数据 (增删改查)
 
 	5. python manage.py shell  // 进入shell 模式  换行用 \
-	6. 增加一个数据  from boards,models import Boards   board = Board(name='xxx',description='des') board.save()
+	6. 增加一个数据  from boards.models import Board   board = Board(name='xxx',description='des') board.save()
 	7. 查询  board.id  board.name 
 	8. 改    board.name='abc' board.save()
 
@@ -54,11 +54,11 @@ This repo is a collection of study demo of Django
 	9.  创建 board = Board.objects.creat(name='name2',description='des python')
 	10. 查询 Board.ojects.all()       board = Board.objects.get(id=3)
 
-	![创建 model class类](/imgs/img1.png)
-	![增 删 改 查](/imgs/img2.png)
+	![创建 model class类](imgs/img1.png)
+	![增 删 改 查](imgs/img2.png)
 
 ## dj06  first view
-	1. 在 views.py 中添加代码
+	1. 在 views.py 中添加代码cls
 	```python 
 	from django.shortcuts import render
 	# Create your views here.
@@ -74,6 +74,60 @@ This repo is a collection of study demo of Django
 		response_html = '<br>'.join(boards_names)
 		return HttpResponse(response_html)
 	```
+## dj07 set template 
+	1. 创建 Templates 文件 xx.html 
+	```html
+		<!DOCTYPE html>
+	<html>
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Boards</title>
+	</head>
+
+	<body>
+	    <h1>Boards</h1>
+	    <table border='1'>
+	        <thead>
+	            <tr>
+	                <th>Board</th>
+	                <th>Posts</th>
+	                <th>Topics</th>
+	                <th>Last Post</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            {% for board in boards %}
+	            <tr>
+	                <td>
+	                    {{board.name}}
+	                    <br>
+	                    <small style="color: #888">{{board.description}}</small>
+	                </td>
+	                <td>0</td>
+	                <td>0</td>
+	                <td></td>
+	            </tr>
+	            {% endfor %}
+	        </tbody>
+	    </table>
+	</body>
+	</html>
+
+	```
+	2. 在setting.py 中设置 TEMPLATES 变量
+	```
+	os.path.join(BASE_DIR,'templates')],
+	```
+	3.boards/views.py 中配置
+	```
+	def home(request):
+	boards = Board.objects.all()
+	return render(request,'home.html',{'boards':boards})
+	```
+	4. 效果
+	![效果](imgs/img3.png)
+
 
 
 	
