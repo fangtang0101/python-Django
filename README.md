@@ -128,6 +128,26 @@ This repo is a collection of study demo of Django
 	4. 效果
 	![效果](https://github.com/fangtang0101/python-Django/blob/master/imgs/img3.png)
 
+## dj08 第一个测试用例
+	1. 在boards/tests.py 中添加如下代码
+```
+from django.test import TestCase
+from django.core.urlresolvers import reverse
+
+class HomeTests(TestCase):
+	def test_home_view_status_code(self):
+		url = reverse('home')
+		response = self.client.get(url)
+		self.assertEquals(response.status_code,200)
+
+	def test_home_url_resolves_home_view(self):
+		view = resolve('/')
+		self.assertEquals(view.func,home)
+
+```
+	2. 运行  python manage.py test
+	3. 运行  python manage.py test --verbosty=2 // 打印出详细的信息
+
 
 
 	
