@@ -12,11 +12,11 @@ This repo is a collection of study demo of Django
 	1. django-admin startproject myproject
 
 	2. 目录组成
-	   * manage.py 用于运行管理项目 的 管理命令 。比如运行开发服务器，运行测试，创建迁移等 
-	   * __init.py 告诉python 这个文件夹是一个python
-	   * settings.py 比较重要 包含所有的项目配置。
-	   * urls.py     映射项目中的路由与路径 
-	   * wsgi.py     部署简单的网管接口  
+	   - manage.py 用于运行管理项目 的 管理命令 。比如运行开发服务器，运行测试，创建迁移等 
+	   - __init.py 告诉python 这个文件夹是一个python
+	   - settings.py 比较重要 包含所有的项目配置。
+	   - urls.py     映射项目中的路由与路径 
+	   - wsgi.py     部署简单的网管接口  
 
 	3. python manage.py runserver   
 
@@ -25,12 +25,12 @@ This repo is a collection of study demo of Django
 	5. django-admin startapp boards
 
 	6.目录组成 
-	  *  migrations/ 次文件夹， Django 会存储一些文件来跟踪你在models.py 文件中创建的 变更。用来保持数据库和models.py 的同步
-	  *  admin.py  此文件是一个django内置的应用程序Django Admin 的配置文件
-	  *  app.py    应用程序本身的配置文件
-	  *  models.py 此文件用来定义 Web应用程序实例的地方。models会有Django自动转化为数据库表
-	  *  tests.py  此文件用来写当前程序的单元测试
-	  *  views.py  此文件是用来处理Web应用程序 request 与 response 周期文件
+	  -  migrations/ 次文件夹， Django 会存储一些文件来跟踪你在models.py 文件中创建的 变更。用来保持数据库和models.py 的同步
+	  -  admin.py  此文件是一个django内置的应用程序Django Admin 的配置文件
+	  -  app.py    应用程序本身的配置文件
+	  -  models.py 此文件用来定义 Web应用程序实例的地方。models会有Django自动转化为数据库表
+	  -  tests.py  此文件用来写当前程序的单元测试
+	  -  views.py  此文件是用来处理Web应用程序 request 与 response 周期文件
 	7. settings.py 中添加 boards
 
 ## dj03: creat a simple view of Hello,World 
@@ -54,8 +54,8 @@ This repo is a collection of study demo of Django
 	9.  创建 board = Board.objects.creat(name='name2',description='des python')
 	10. 查询 Board.ojects.all()       board = Board.objects.get(id=3)
 
-	![创建 model class类](imgs/img1.png)
-	![增 删 改 查](imgs/img2.png)
+	![创建 model class类](https://github.com/fangtang0101/python-Django/raw/master/imgs/img1.png)
+	![增 删 改 查](https://github.com/fangtang0101/python-Django/raw/master/imgs/img2.png)
 
 ## dj06  first view
 	1. 在 views.py 中添加代码cls
@@ -126,7 +126,7 @@ This repo is a collection of study demo of Django
 	return render(request,'home.html',{'boards':boards})
 ```
 	4. 效果
-	![效果](https://github.com/fangtang0101/python-Django/blob/master/imgs/img3.png)
+	![效果](https://github.com/fangtang0101/python-Django/raw/master/imgs/img3.png)
 
 ## dj08 第一个测试用例
 	1. 在boards/tests.py 中添加如下代码
@@ -161,50 +161,53 @@ class HomeTests(TestCase):
 	3.在 templates/home.html 模板中导入 静态文件 （注意：字符串的部分不可以折行）
 
 	```html
-	{% load static %}<!DOCTYPE html>
-	<html>
+		{% load static %}<!DOCTYPE html>
+		<html>
 
-	<head>
-	    <meta charset="utf-8">
-	    <title>Boards</title>
-	    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-	</head>
+		<head>
+		    <meta charset="utf-8">
+		    <title>Boards</title>
+		    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+		</head>
 
-	<body>
-	    <div class="container">
-	        <ol class="breadcrumb my-4">
-	            <li class="breadcrumb-item active">Boards</li>
-	        </ol>
-	        <table class="table">
-	            <thead class="thead-inverse">
-	                <tr>
-	                    <th>Board</th>
-	                    <th>Posts</th>
-	                    <th>Topics</th>
-	                    <th>Last Post</th>
-	                </tr>
-	            </thead>
-	            <tbody>
-	                {% for board in boards %}
-	                <tr>
-	                    <td>
-	                        {{ board.name }}
-	                        <small class="text-muted d-block">{{ board.description }}</small>
-	                    </td>
-	                    <td class="align-middle">0</td>
-	                    <td class="align-middle">0</td>
-	                    <td></td>
-	                </tr>
-	                {% endfor %}
-	            </tbody>
-	        </table>
-	    </div>
-	</body>
+		<body>
+		    <div class="container">
+		        <ol class="breadcrumb my-4">
+		            <li class="breadcrumb-item active">Boards</li>
+		        </ol>
+		        <table class="table">
+		            <thead class="thead-inverse">
+		                <tr>
+		                    <th>Board</th>
+		                    <th>Posts</th>
+		                    <th>Topics</th>
+		                    <th>Last Post</th>
+		                </tr>
+		            </thead>
+		            <tbody>
+		                {% for board in boards %}
+		                <tr>
+		                    <td>
+		                        {{ board.name }}
+		                        <small class="text-muted d-block">{{ board.description }}</small>
+		                    </td>
+		                    <td class="align-middle">0</td>
+		                    <td class="align-middle">0</td>
+		                    <td></td>
+		                </tr>
+		                {% endfor %}
+		            </tbody>
+		        </table>
+		    </div>
+		</body>
 
-	</html>
-
+		</html>
 	```
-	![图片](imgs/d09.png)
+
+	4.效果图
+	![图片](https://github.com/fangtang0101/python-Django/raw/master/imgs/d09.png)
+
+
 
 
 
