@@ -207,6 +207,25 @@ class HomeTests(TestCase):
 	4.效果图
 	![图片](https://github.com/fangtang0101/python-Django/raw/master/imgs/d09.png)
 
+## dj01  Django Admin  （对应的管理后台）
+	
+	1. 创建 超级用户 python manage.py createsuperuser     (admin fang12345678)
+
+	2. 可以进入后台管理西戎 http://127.0.0.1:8000/admin/
+
+	3. 添加模型 在 boards/admin.py 中添加 models
+
+	```python
+	from django.contrib import admin
+	from .models import Board
+	admin.site.register(Board)
+
+	```
+	4. /admin 就能看到 board 模块 ，点击进去可以 增删改查
+
+
+
+
 
 
 
